@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <STYLE>
+    *{
+    padding:0;
+    margin:0;
+  }
+.body {
+  background-image: url(img.jpg);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+#scoreBox{
+    position:absolute;
+    top: 9px;
+    right: 200px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+  }
+#board{
+  background-image: url(sg);
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+  }
+.head{
+    background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
+    border: 2px solid rgb(34, 4, 34); 
+    transform: scale(1.02);
+    border-radius: 12px;
+}
+.snake{
+  background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 15px;
+    
+}
+.food{
+  background: url("apple.jpg");
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+.game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px; /* Large font size for game over */
+    color: red; /* Red color for game over message */
+    text-align: center; /* Center text */
+    display: none; /* Hidden by default */
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+  </STYLE>
+</head>
+
+<body>
+ 
+  <div class="body">
+    <div id="scoreBox">score: 0</div>
+    <div id="board"></div>
+</div>
+<div id="gameOverMessage" class="game-over-message" style="display: none;">
+  Game Over! <br> Your score: <span id="finalScore"></span>
+  <br><button id="restartButton">Restart</button>
+  <script src="SNAKE.JS"></script>
+</body>
+</html>
